@@ -156,7 +156,7 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p1714261924017"><a name="p1714261924017"></a><a name="p1714261924017"></a>虚拟私有云ID。</p>
 <p id="p16517143816118"><a name="p16517143816118"></a><a name="p16517143816118"></a>获取方法如下：</p>
-<a name="ul887913435377"></a><a name="ul887913435377"></a><ul id="ul887913435377"><li>方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090625.html" target="_blank" rel="noopener noreferrer">查询VPC列表</a>。</li></ul>
+<a name="ul887913435377"></a><a name="ul887913435377"></a><ul id="ul887913435377"><li>方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html" target="_blank" rel="noopener noreferrer">查询VPC列表</a>。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row031922182516"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p431917292516"><a name="zh-cn_topic_0128036927_p431917292516"></a><a name="zh-cn_topic_0128036927_p431917292516"></a>security_group_id</p>
@@ -167,7 +167,7 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p8364103564013"><a name="p8364103564013"></a><a name="p8364103564013"></a>指定实例所属的安全组。</p>
 <p id="p1012535151112"><a name="p1012535151112"></a><a name="p1012535151112"></a>获取方法如下：</p>
-<a name="ul1822354122210"></a><a name="ul1822354122210"></a><ul id="ul1822354122210"><li>方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090617.html" target="_blank" rel="noopener noreferrer">查询安全组列表</a>。</li></ul>
+<a name="ul1822354122210"></a><a name="ul1822354122210"></a><ul id="ul1822354122210"><li>方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html" target="_blank" rel="noopener noreferrer">查询安全组列表</a>。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row1931982172516"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p1231917222510"><a name="zh-cn_topic_0128036927_p1231917222510"></a><a name="zh-cn_topic_0128036927_p1231917222510"></a>subnet_id</p>
@@ -178,7 +178,7 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p6957182201210"><a name="p6957182201210"></a><a name="p6957182201210"></a>子网信息。</p>
 <p id="p394819577568"><a name="p394819577568"></a><a name="p394819577568"></a>获取方法如下：</p>
-<a name="ul54643814416"></a><a name="ul54643814416"></a><ul id="ul54643814416"><li>方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090592.html" target="_blank" rel="noopener noreferrer">查询子网列表</a>。</li></ul>
+<a name="ul54643814416"></a><a name="ul54643814416"></a><ul id="ul54643814416"><li>方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。</li><li>方法2：通过虚拟私有云服务的API接口查询，具体操作可参考<a href="https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html" target="_blank" rel="noopener noreferrer">查询子网列表</a>。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row1431910222512"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p1231982132511"><a name="zh-cn_topic_0128036927_p1231982132511"></a><a name="zh-cn_topic_0128036927_p1231982132511"></a>available_zones</p>

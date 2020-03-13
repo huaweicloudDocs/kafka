@@ -127,7 +127,7 @@ GET /v1.0/\{project\_id\}/instances/\{instance\_id\}/ceshierarchy
 </td>
 <td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.2 "><p id="p1051133955810"><a name="p1051133955810"></a><a name="p1051133955810"></a>Array of object metrics</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.2.4.1.3 "><p id="p16511939125817"><a name="p16511939125817"></a><a name="p16511939125817"></a>监控矩阵名称。参数参考<a href="#table15395838135813">表10</a>。</p>
+<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.2.4.1.3 "><p id="p16511939125817"><a name="p16511939125817"></a><a name="p16511939125817"></a>监控指标名称。参数参考<a href="#table15395838135813">表10</a>。</p>
 </td>
 </tr>
 <tr id="row135111839125818"><td class="cellrowborder" valign="top" width="23.23%" headers="mcps1.2.4.1.1 "><p id="p1511163975811"><a name="p1511163975811"></a><a name="p1511163975811"></a>key_name</p>
@@ -274,7 +274,7 @@ GET /v1.0/\{project\_id\}/instances/\{instance\_id\}/ceshierarchy
 </td>
 <td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.2 "><p id="p7512163915583"><a name="p7512163915583"></a><a name="p7512163915583"></a>Array of String</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.2.4.1.3 "><p id="p105121739135818"><a name="p105121739135818"></a><a name="p105121739135818"></a>监控矩阵名称列表。参数参见<a href="#table15395838135813">表10</a>。</p>
+<td class="cellrowborder" valign="top" width="54.55%" headers="mcps1.2.4.1.3 "><p id="p105121739135818"><a name="p105121739135818"></a><a name="p105121739135818"></a>监控指标名称列表。参数参见<a href="#table15395838135813">表10</a>。</p>
 </td>
 </tr>
 <tr id="row19512173913582"><td class="cellrowborder" valign="top" width="23.23%" headers="mcps1.2.4.1.1 "><p id="p751293945811"><a name="p751293945811"></a><a name="p751293945811"></a>key_name</p>
@@ -590,7 +590,7 @@ GET /v1.0/\{project\_id\}/instances/\{instance\_id\}/ceshierarchy
 
 ## 状态码<a name="section10900163819586"></a>
 
-查询成功的状态码如[表11](#table990323885818)所示，其他响应见表1-4。
+查询成功的状态码如[表11](#table990323885818)所示，其他响应见[表1](状态码.md#zh-cn_topic_0128036883_table5210141351517)。
 
 **表 11**  状态码
 

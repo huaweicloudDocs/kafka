@@ -148,7 +148,7 @@ GET  /v1.0/\{project\_id\}/instances/\{instance\_id\}/manage/coordinators
 
 ## 状态码<a name="section353095855814"></a>
 
-查询成功的状态码如[表4](#table2530105835818)所示，其他响应见表1-4。
+查询成功的状态码如[表4](#table2530105835818)所示，其他响应见[表1](状态码.md#zh-cn_topic_0128036883_table5210141351517)。
 
 **表 4**  状态码
 

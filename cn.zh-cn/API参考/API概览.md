@@ -121,6 +121,11 @@
 <td class="cellrowborder" valign="top" width="64.66%" headers="mcps1.2.3.1.2 "><p id="p14518561635"><a name="p14518561635"></a><a name="p14518561635"></a>查询Kafka实例所有消费组对应的协调器信息。</p>
 </td>
 </tr>
+<tr id="row185110561314"><td class="cellrowborder" valign="top" width="35.339999999999996%" headers="mcps1.2.3.1.1 "><p id="p105116561536"><a name="p105116561536"></a><a name="p105116561536"></a><a href="查询Kafka实例Topic详细信息.md">查询Kafka实例Topic详细信息</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="64.66%" headers="mcps1.2.3.1.2 "><p id="p135117569312"><a name="p135117569312"></a><a name="p135117569312"></a>查询Kafka实例Topic详细信息。</p>
+</td>
+</tr>
 <tr id="row13511561131"><td class="cellrowborder" valign="top" width="35.339999999999996%" headers="mcps1.2.3.1.1 "><p id="p125119561430"><a name="p125119561430"></a><a name="p125119561430"></a><a href="新增Kafka实例指定Topic分区.md">新增Kafka实例指定Topic分区</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="64.66%" headers="mcps1.2.3.1.2 "><p id="p15511756730"><a name="p15511756730"></a><a name="p15511756730"></a>为Kafka实例指定Topic新增分区。</p>
