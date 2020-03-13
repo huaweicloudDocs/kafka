@@ -27,12 +27,12 @@
         ![](figures/Kafka实例安全组规则（实例已开启SASL）.png "Kafka实例安全组规则（实例已开启SASL）")
 
 2.  <a name="zh-cn_topic_0143117217_li1422895833615"></a>已获取连接Kafka专享版实例的地址。
-    -   如果是VPC内访问，获取实例详情中的“连接地址”。
+    -   如果是VPC内访问，实例端口为9093，实例连接地址获取如下图。
 
         **图 2**  获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）<a name="zh-cn_topic_0143117217_fig14172952131510"></a>  
         ![](figures/获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）.png "获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）")
 
-    -   如果是公网访问，获取实例详情中的“Kafka访问地址”。
+    -   如果是公网访问，实例端口为9095，实例连接地址获取如下图。
 
         **图 3**  获取公网访问Kafka专享实例的连接地址（实例已开启SASL）<a name="zh-cn_topic_0143117217_zh-cn_topic_0169795201_fig1723713417247"></a>  
         ![](figures/获取公网访问Kafka专享实例的连接地址（实例已开启SASL）.png "获取公网访问Kafka专享实例的连接地址（实例已开启SASL）")
@@ -85,7 +85,7 @@
     ssl.truststore.password=dms@kafka
     ```
 
-    说明：其中username和password为创建Kafka专享实例时开启SASL\_SSL时填入的用户名和密码， ssl.trustore.location配置为证书的存放路径。
+    说明：其中username和password为创建Kafka专享实例时开启SASL\_SSL时填入的用户名和密码， ssl.trustore.location配置为证书的存放路径，**ssl.truststore.password为服务器证书密码，不可更改**。
 
 7.  进入“\[base\_dir\]/kafka\_2.11-1.1.0/bin”目录下。
 8.  执行如下命令进行生产消息。

@@ -18,8 +18,8 @@ Kafka Manager是开源的kafka集群管理工具，需要通过浏览器才能�
     **图 1**  获取Kafka Manager地址<a name="zh-cn_topic_0143117163_fig181443461517"></a>  
     ![](figures/获取Kafka-Manager地址.png "获取Kafka-Manager地址")
 
-3.  在浏览器中输入Kafka Manager的地址，进入Kafka Manager登录页面。
-4.  输入购买实例时设置的Kafka Manager用户名和密码，即可管理Kafka集群。
+3.  登录Windows服务器，然后在浏览器中输入Kafka Manager的地址，进入Kafka Manager登录页面。
+4.  输入创建实例时设置的Kafka Manager用户名和密码，即可管理Kafka集群。
 
 ## 查看Kafka Manager<a name="zh-cn_topic_0143117163_section1250619492116"></a>
 

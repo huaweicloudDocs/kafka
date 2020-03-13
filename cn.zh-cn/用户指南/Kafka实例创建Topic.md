@@ -4,9 +4,8 @@
 
 ## 前提条件<a name="section11712186286"></a>
 
-已创建Kafka专享版实例。
-
-只有运行中的实例才可以创建Topic。
+-   已创建Kafka专享版实例。
+-   只有运行中的实例才可以创建Topic。
 
 ## 操作步骤<a name="section0249155910409"></a>
 
@@ -38,7 +37,7 @@
     </thead>
     <tbody><tr id="row8641444183514"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p12649444358"><a name="p12649444358"></a><a name="p12649444358"></a>Topic名称</p>
     </td>
-    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p886312445210"><a name="p886312445210"></a><a name="p886312445210"></a>DMS为您自动生成了Topic名称，您可以根据需要修改，Topic名称只能包含a~z，A~Z，0-9，-，_，长度为4~64的字符串。</p>
+    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p886312445210"><a name="p886312445210"></a><a name="p886312445210"></a>系统为您自动生成了Topic名称，您可以根据需要修改，Topic名称只能包含a~z，A~Z，0-9，-，_，长度为4~64的字符串。</p>
     <p id="p19863142405214"><a name="p19863142405214"></a><a name="p19863142405214"></a>创建Topic后不能修改名称。</p>
     </td>
     </tr>

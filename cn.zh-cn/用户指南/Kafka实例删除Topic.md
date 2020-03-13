@@ -2,9 +2,8 @@
 
 ## 前提条件<a name="section11712186286"></a>
 
-已创建Kafka专享版实例，并且已创建Topic。
-
-只有运行中的实例才可以删除Topic。
+-   已创建Kafka专享版实例，并且已创建Topic。
+-   只有运行中的实例才可以删除Topic。
 
 ## 操作步骤<a name="section0249155910409"></a>
 

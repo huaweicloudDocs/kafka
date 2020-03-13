@@ -1,6 +1,6 @@
 # 创建用户并授权使用DMS<a name="ZH-CN_TOPIC_0171717052"></a>
 
-如果您需要对您所拥有的DMS服务进行精细的权限管理，您可以使用[统一身份认证服务](https://support.huaweicloud.com/usermanual-iam/zh-cn_topic_0079496985.html)（Identity and Access Management，简称IAM），通过IAM，您可以：
+如果您需要对您所拥有的DMS服务进行精细的权限管理，您可以使用[统一身份认证服务](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)（Identity and Access Management，简称IAM），通过IAM，您可以：
 
 -   根据企业的业务组织，在您的华为云账号中，给企业中不同职能部门的员工创建IAM用户，让员工拥有唯一安全凭证，并使用DMS资源。
 -   根据企业用户的职能，设置不同的访问权限，以达到用户之间的权限隔离。
@@ -12,10 +12,10 @@
 
 ## 前提条件<a name="zh-cn_topic_0170877287_section17723185741610"></a>
 
--   “DMS Viewer”权限为细粒度策略，请先在IAM控制台中开通细粒度策略，开通方法请参见：[申请基于策略的访问控制公测](https://support.huaweicloud.com/usermanual-iam/iam_01_019.html)。
+-   “DMS Viewer”属于策略，请先在IAM控制台中开通基于策略的访问控制公测，开通方法请参见：[申请基于策略的访问控制公测](https://support.huaweicloud.com/usermanual-iam/iam_01_019.html)。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >DMS Viewer细粒度策略有包含OBS授权项，由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的细粒度策略后，大概需要等待5分钟细粒度策略才能生效。  
+    >DMS Viewer策略有包含OBS授权项，由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的策略后，大概需要等待5分钟策略才能生效。  
 
 -   给用户组授权之前，请您了解用户组可以添加的DMS系统策略，并结合实际需求进行选择，DMS支持的系统策略及策略间的对比，请参见：[DMS系统策略](https://support.huaweicloud.com/productdesc-kafka/ProductDescPrivilegeManagement.html)。若您需要对除DMS之外的其它服务授权，IAM支持服务的所有策略请参见[权限策略](https://support.huaweicloud.com/usermanual-permissions/zh-cn_topic_0063498930.html)。
 
