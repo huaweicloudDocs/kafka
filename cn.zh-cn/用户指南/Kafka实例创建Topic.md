@@ -37,7 +37,7 @@
     </thead>
     <tbody><tr id="row8641444183514"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p12649444358"><a name="p12649444358"></a><a name="p12649444358"></a>Topic名称</p>
     </td>
-    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p886312445210"><a name="p886312445210"></a><a name="p886312445210"></a>系统为您自动生成了Topic名称，您可以根据需要修改，Topic名称只能包含a~z，A~Z，0-9，-，_，长度为4~64的字符串。</p>
+    <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p886312445210"><a name="p886312445210"></a><a name="p886312445210"></a>系统为您自动生成了Topic名称，您可以根据需要修改。</p>
     <p id="p19863142405214"><a name="p19863142405214"></a><a name="p19863142405214"></a>创建Topic后不能修改名称。</p>
     </td>
     </tr>
@@ -82,8 +82,4 @@
     </table>
 
 7.  配置完成后，单击“确定”，完成创建Topic。
-
-    **图 1**  Kafka实例创建Topic<a name="fig16777459182413"></a>  
-    ![](figures/Kafka实例创建Topic.png "Kafka实例创建Topic")
-
 

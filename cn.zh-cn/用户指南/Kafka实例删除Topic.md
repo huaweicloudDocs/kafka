@@ -27,7 +27,3 @@
 
 8.  单击“是”，确认删除。
 
-    **图 1**  Kafka实例删除Topic<a name="fig336521317427"></a>  
-    ![](figures/Kafka实例删除Topic.png "Kafka实例删除Topic")
-
-

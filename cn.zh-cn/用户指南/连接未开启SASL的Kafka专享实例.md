@@ -7,7 +7,8 @@
 多语言客户端的使用请参考Kafka官网：[https://cwiki.apache.org/confluence/display/KAFKA/Clients](https://cwiki.apache.org/confluence/display/KAFKA/Clients)
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->本章节主要描述使用命令行模式连接Kafka实例，如果是在业务代码中连接Kafka实例，请参考《[Kakfa专享实例开发指南](https://support.huaweicloud.com/devg-kafka/Kafka-summary.html)》。  
+>-   本章节主要描述使用命令行模式连接Kafka实例，如果是在业务代码中连接Kafka实例，请参考《[Kakfa专享实例开发指南](https://support.huaweicloud.com/devg-kafka/Kafka-summary.html)》。  
+>-   Kafka服务器允许客户端单IP连接的个数为200个，如果超过了，会出现连接失败问题。  
 
 ## 前提条件<a name="zh-cn_topic_0143117094_section17830048113810"></a>
 
@@ -36,38 +37,43 @@
         ![](figures/获取公网访问Kafka专享实例的连接地址（实例未开启SASL）.png "获取公网访问Kafka专享实例的连接地址（实例未开启SASL）")
 
 3.  Kafka专享实例已创建Topic。
+4.  弹性云服务器的环境已配置正确，并已下载Kafka开源客户端。如果没有，请执行以下操作。
+    1.  登录弹性云服务器。
+
+        本文以Linux系统的弹性云服务器为例。Windows系统弹性云服务器的JDK安装与环境变量配置可自行在互联网查找相关帮助。
+
+    2.  安装Java JDK或JRE，并配置JAVA\_HOME与PATH环境变量，使用执行用户在用户家目录下修改.bash\_profile，添加如下行。
+
+        ```
+        export JAVA_HOME=/opt/java/jdk1.8.0_151 
+        export PATH=$JAVA_HOME/bin:$PATH
+        ```
+
+        执行source .bash\_profile命令使修改生效。
+
+        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >ECS虚拟机默认自带的JDK可能不符合要求，例如OpenJDK，需要配置为Oracle的JDK，可至[Oracle官方下载页面](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java Development Kit 1.8.111及以上版本。  
+
+    3.  下载开源的Kafka客户端。对应1.1.0版本实例的下载地址：[https://archive.apache.org/dist/kafka/1.1.0/kafka\_2.11-1.1.0.tgz](https://archive.apache.org/dist/kafka/1.1.0/kafka_2.11-1.1.0.tgz)
+
+        **wget https://archive.apache.org/dist/kafka/1.1.0/kafka\_2.11-1.1.0.tgz**
+
+    4.  解压Kafka客户端文件。
+
+        **tar -zxf  _\[kafka\_tar\]_**
+
+        其中，_\[kafka\_tar\]_表示客户端的压缩包名称。
+
+        例如：
+
+        **tar -zxf kafka\_2.11-1.1.0.tgz**
+
+
 
 ## 命令行模式连接实例<a name="zh-cn_topic_0143117094_section189213202426"></a>
 
 1.  登录Linux系统的弹性云服务器。
-2.  安装Java JDK或JRE，并配置JAVA\_HOME与PATH环境变量，使用执行用户在用户家目录下修改.bash\_profile，添加如下行。
-
-    ```
-    export JAVA_HOME=/opt/java/jdk1.8.0_151 
-    export PATH=$JAVA_HOME/bin:$PATH
-    ```
-
-    执行source .bash\_profile命令使修改生效。
-
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >ECS虚拟机默认自带的JDK可能不符合要求，例如OpenJDK，需要配置为Oracle的JDK，可至[Oracle官方下载页面](http://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java Development Kit 1.8.111及以上版本。  
-
-3.  下载开源的Kafka客户端。对应1.1.0版本实例的下载地址：[https://archive.apache.org/dist/kafka/1.1.0/kafka\_2.11-1.1.0.tgz](https://archive.apache.org/dist/kafka/1.1.0/kafka_2.11-1.1.0.tgz)
-
-    **wget https://archive.apache.org/dist/kafka/1.1.0/kafka\_2.11-1.1.0.tgz**
-
-4.  解压Kafka客户端文件，下面以1.1.0版本为例。
-
-    **tar -zxf  _\[kafka\_tar\]_**
-
-    其中，_\[kafka\_tar\]_表示客户端的压缩包名称。
-
-    例如：
-
-    **tar -zxf kafka\_2.11-1.1.0.tgz**
-
-5.  进入\[base\_dir\]/kafka\_2.11-1.1.0/bin目录下。
-6.  执行如下命令进行生产消息。
+2.  执行如下命令进行生产消息。
 
     **_./kafka-console-producer.sh --broker-list \[连接地址\] --topic \[Topic名称\]_**
 
@@ -88,7 +94,7 @@
 
     如需停止生产使用**Ctrl+C**命令退出。
 
-7.  执行如下命令消费消息。
+3.  执行如下命令消费消息。
 
     _**./kafka-console-consumer.sh --bootstrap-server \[连接地址\] --topic \[Topic名称\] --from-beginning**_
 
