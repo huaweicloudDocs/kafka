@@ -1,81 +1,62 @@
-# 连接已开启SASL的Kafka专享版实例<a name="ZH-CN_TOPIC_0171821732"></a>
+# 连接已开启SASL的Kafka专享版实例<a name="kafka-ug-180801001"></a>
 
 创建实例时开启SASL\_SSL访问，则数据加密传输，安全性更高。
 
+由于安全问题，2021年3月20日前以及当天创建的实例，支持的加密套件为**TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_CBC\_SHA256**，**TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256**和**TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256**。2021年3月20日后创建的实例，支持的加密套件为**TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256**。
+
 本节介绍如何使用开源的Kafka客户端访问开启SASL的Kafka专享实例的方法。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   Kafka服务器允许客户端单IP连接的个数为200个，如果超过了，会出现连接失败问题。  
->-   使用SASL方式连接Kafka实例时，为了客户端能够快速解析实例的Broker节点，建议配置host和IP的映射关系。  
->    其中，IP地址必须为实例连接地址（Broker节点地址），host为每个实例主机的名称，可以自定义，但不能重复。  
->    例如：  
->    10.154.48.120 server01  
->    10.154.48.121 server02  
->    10.154.48.122 server03  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   2020年7月以及之后购买的实例，Kafka服务器允许客户端单IP连接的个数为1000个，在此之前购买的实例，Kafka服务器允许客户端单IP连接的个数为200个，如果超过了，会出现连接失败问题。您可以通过[修改配置参数](修改配置参数.md)来修改单IP的连接数。
+>-   使用SASL方式连接Kafka实例时，为了客户端能够快速解析实例的Broker，建议在客户端所在主机的“/etc/hosts”文件中配置host和IP的映射关系。
+>    其中，IP地址必须为实例连接地址（Broker地址），host为每个实例主机的名称（您可以自定义主机的名称，但不能重复）。
+>    例如：
+>    10.154.48.120 server01
+>    10.154.48.121 server02
+>    10.154.48.122 server03
 
 ## 前提条件<a name="zh-cn_topic_0143117217_section17830048113810"></a>
 
-1.  已配置正确的安全组。
+-   已配置正确的安全组。
 
-    访问开启SASL的Kafka专享实例时，支持**VPC内访问**和**公网访问**两种方式。
+    访问开启SASL的Kafka专享实例时，支持**VPC内访问**和**公网访问**两种方式，实例需要配置正确的安全组规则，具体安全组配置要求，请参考[表2](准备实例依赖资源.md#table161395381402)。
 
-    -   如果是VPC内访问，除了弹性云服务器与Kafka专享版实例的VPC需要保持一致，弹性云服务器和Kafka专享版实例还需要配置了正确的安全组规则，客户端才能正常访问Kafka实例。安全组配置要求，请参考[如何选择和配置安全组](https://support.huaweicloud.com/kafka_faq/kafka-faq-180604024.html)。
-    -   如果是公网访问，不需要关注弹性云服务器和Kafka实例的VPC是否一致，只需要保证Kafka实例所在的安全组配置为正确的规则，客户端才能访问Kafka实例。
-
-        SASL开启时，需要放开入方向的**9095**端口。
-
-        **图 1**  Kafka实例安全组规则（实例已开启SASL）<a name="zh-cn_topic_0143117217_fig172421742194720"></a>  
-        ![](figures/Kafka实例安全组规则（实例已开启SASL）.png "Kafka实例安全组规则（实例已开启SASL）")
-
-2.  <a name="zh-cn_topic_0143117217_li1422895833615"></a>已获取连接Kafka专享版实例的地址。
+-   <a name="li10340528173815"></a>已获取连接Kafka专享版实例的地址。
     -   如果是VPC内访问，实例端口为9093，实例连接地址获取如下图。
 
-        **图 2**  获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）<a name="zh-cn_topic_0143117217_fig14172952131510"></a>  
+        **图 1**  获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）<a name="zh-cn_topic_0143117217_fig14172952131510"></a>  
         ![](figures/获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）.png "获取VPC内访问Kafka专享实例的连接地址（实例已开启SASL）")
 
     -   如果是公网访问，实例端口为9095，实例连接地址获取如下图。
 
-        **图 3**  获取公网访问Kafka专享实例的连接地址（实例已开启SASL）<a name="zh-cn_topic_0143117217_zh-cn_topic_0169795201_fig1723713417247"></a>  
+        **图 2**  获取公网访问Kafka专享实例的连接地址（实例已开启SASL）<a name="fig9534164071419"></a>  
         ![](figures/获取公网访问Kafka专享实例的连接地址（实例已开启SASL）.png "获取公网访问Kafka专享实例的连接地址（实例已开启SASL）")
 
-3.  Kafka专享实例已创建Topic。
-4.  已下载client.truststore.jks证书。如果没有，请执行以下操作获取。
 
-    下载地址：[https://dms-demo.obs.myhuaweicloud.com/cert.zip](https://dms-demo.obs.myhuaweicloud.com/cert.zip)， 下载压缩包后解压，获取压缩包中的客户端证书文件：client.truststore.jks。
-
-5.  弹性云服务器的环境已配置正确，并已下载Kafka开源客户端。如果没有，请执行以下操作。
-    1.  登录弹性云服务器。
-
-        本文以Linux系统的弹性云服务器为例。Windows系统弹性云服务器的JDK安装与环境变量配置可自行在互联网查找相关帮助。
-
-    2.  安装Java JDK或JRE，并配置JAVA\_HOME与PATH环境变量，使用执行用户在用户家目录下修改.bash\_profile，添加如下行。
-
-        ```
-        export JAVA_HOME=/opt/java/jdk1.8.0_151 
-        export PATH=$JAVA_HOME/bin:$PATH
-        ```
-
-        执行source .bash\_profile命令使修改生效。
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >ECS虚拟机默认自带的JDK可能不符合要求，例如OpenJDK，需要配置为Oracle的JDK，可至[Oracle官方下载页面](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java Development Kit 1.8.111及以上版本。  
-
-    3.  解压Kafka客户端文件。
-
-        **tar -zxf  _\[kafka\_tar\]_**
-
-        其中，_\[kafka\_tar\]_表示客户端的压缩包名称。
-
-        例如：
-
-        **tar -zxf kafka\_2.11-1.1.0.tgz**
-
-
+-   Kafka专享实例已创建Topic，否则请提前[创建Topic](创建Topic.md)。
+-   已下载client.truststore.jks证书。如果没有，在控制台单击Kafka实例名称，进入实例详情页面，在“基本信息 \> 高级配置 \> Kafka SASL\_SSL”所在行，单击![](figures/icon-download.png)。下载压缩包后解压，获取压缩包中的客户端证书文件：client.truststore.jks。
+-   已下载[Kafka命令行工具1.1.0版本](https://archive.apache.org/dist/kafka/1.1.0/kafka_2.11-1.1.0.tgz)或者[Kafka命令行工具2.3.0版本](https://archive.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz)，确保Kafka实例版本与命令行工具版本相同。
+-   已在Kafka命令行工具的使用环境中安装[Java Development Kit 1.8.111或以上版本](https://www.oracle.com/java/technologies/downloads/#java8)，并完成环境变量配置。
 
 ## 命令行模式连接实例<a name="zh-cn_topic_0143117217_section189213202426"></a>
 
-1.  登录Linux系统的弹性云服务器。
-2.  在consumer.properties和producer.properties文件中增加如下行：
+以下操作命令以Linux系统为例进行说明。
+
+1.  解压Kafka命令行工具。
+
+    进入文件压缩包所在目录，然后执行以下命令解压文件。
+
+    **tar -zxf  _\[kafka\_tar\]_**
+
+    其中，_\[kafka\_tar\]_表示命令行工具的压缩包名称。
+
+    例如：
+
+    **tar -zxf kafka\_2.11-1.1.0.tgz**
+
+2.  修改Kafka命令行工具配置文件。
+
+    在Kafka命令行工具的“/config”目录中找到“consumer.properties”和“producer.properties”文件，并分别在文件中增加如下内容。
 
     ```
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
@@ -91,52 +72,62 @@
 
     参数说明：
 
-    -   username和password为创建Kafka专享实例时开启SASL\_SSL时填入的用户名和密码。
-    -   ssl.trustore.location配置为证书的存放路径。
+    -   username和password为创建Kafka专享实例过程中开启SASL\_SSL时填入的用户名和密码，或者创建SASL\_SSL用户时设置的用户名和密码。
+    -   ssl.trustore.location配置为client.truststore.jks证书的存放路径。注意，Windows系统下证书路径中也必须使用“/”，不能使用Windows系统中拷贝路径时的“\\”，否则客户端获取证书失败。
     -   **ssl.truststore.password为服务器证书密码，不可更改，需要保持为dms@kafka**。
     -   ssl.endpoint.identification.algorithm为证书域名校验开关，为空则表示关闭。这里需要**保持关闭状态，必须设置为空**。
 
-3.  进入“\[base\_dir\]/kafka\_2.11-1.1.0/bin”目录下。
+3.  进入Kafka命令行工具的“/bin”目录下。
 
-    其中，\[base\_dir\]表示Kafka客户端安装目录。
+    注意，Windows系统下需要进入“/bin/windows”目录下。
 
 4.  执行如下命令进行生产消息。
 
-    **./kafka-console-producer.sh --broker-list \[连接地址\] --topic \[Topic名称\] --producer.config ../config/producer.properties**
+    ```
+    ./kafka-console-producer.sh --broker-list ${连接地址} --topic ${Topic名称} --producer.config ../config/producer.properties
+    ```
 
     参数说明如下：
 
-    -   **_\[连接地址\]_**为[2](#zh-cn_topic_0143117217_li1422895833615)获取的连接地址，如果是公网访问，请使用“Kafka访问地址”，如果是VPC内访问，请使用“连接地址”，请根据实际情况选择。
-    -   **_\[Topic名称\]_**表示Kafka实例下创建的Topic名称。
+    -   连接地址：从[前提条件](#li10340528173815)获取的连接地址，如果是公网访问，请使用“Kafka访问地址”，如果是VPC内访问，请使用“连接地址”，请根据实际情况选择。
+    -   Topic名称：Kafka实例下创建的Topic名称。
 
     本文以公网访问为例，Kafka实例连接地址为“10.xxx.xxx.202:9095,10.xxx.xxx.197:9095,10.xxx.xxx.68:9095”。
 
-    执行完命令后输入内容，按回车键发送消息到Kafka实例，输入的每一行内容都将作为一条消息发送到Kafka实例。
+    执行完命令后，输入需要生产的消息内容，按“Enter”发送消息到Kafka实例，输入的每一行内容都将作为一条消息发送到Kafka实例。
 
     ```
-    [root@ecs-heru bin]#./kafka-console-producer.sh --broker-list 10.xxx.xxx.202:9095,10.xxx.xxx.197:9095,10.xxx.xxx.68:9095  --topic topic-heru --producer.config ../config/producer.properties
+    [root@ecs-kafka bin]#./kafka-console-producer.sh --broker-list 10.xxx.xxx.202:9095,10.xxx.xxx.197:9095,10.xxx.xxx.68:9095  --topic topic-demo --producer.config ../config/producer.properties
     >hello
     >DMS
     >Kafka!
-    >^C[root@ecs-heru bin]# 
+    >^C[root@ecs-kafka bin]# 
     ```
 
     如需停止生产使用**Ctrl+C**命令退出。
 
 5.  执行如下命令消费消息。
 
-    **./kafka-console-consumer.sh --bootstrap-server \[连接地址\] --topic \[Topic名称\] --from-beginning  --consumer.config ../config/consumer.properties**
+    ```
+    ./kafka-console-consumer.sh --bootstrap-server ${连接地址} --topic ${Topic名称} --group ${消费组名称} --from-beginning  --consumer.config ../config/consumer.properties
+    ```
+
+    参数说明如下：
+
+    -   连接地址：从[前提条件](#li10340528173815)获取的连接地址，如果是公网访问，请使用“Kafka访问地址”，如果是VPC内访问，请使用“连接地址”，请根据实际情况选择。
+    -   Topic名称：Kafka实例下创建的Topic名称。
+    -   消费组名称：根据您的业务需求，设定消费组名称。
+
+    示例如下：
 
     ```
-    [root@ecs-heru bin]#  ./kafka-console-consumer.sh --bootstrap-server 10.xxx.xxx.202:9095,10.xxx.xxx.197:9095,10.xxx.xxx.68:9095 --topic topic-heru --from-beginning --consumer.config ../config/consumer.properties
+    [root@ecs-kafka bin]#  ./kafka-console-consumer.sh --bootstrap-server 10.xxx.xxx.202:9095,10.xxx.xxx.197:9095,10.xxx.xxx.68:9095 --topic topic-demo --group order-test --from-beginning --consumer.config ../config/consumer.properties
     hello
     Kafka!
-    abcd
     DMS
-    heuu
     hello
-    ^CProcessed a total of 6 messages
-    [root@ecs-heru bin]# 
+    ^CProcessed a total of 4 messages
+    [root@ecs-kafka bin]# 
     ```
 
     如需停止消费使用**Ctrl+C**命令退出。

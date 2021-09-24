@@ -1,40 +1,52 @@
-# DMS Kafka专享版 用户指南
+# Kafka专享版 用户指南
 
--   [权限管理]
-    -   [创建用户并授权使用DMS](创建用户并授权使用DMS.md)
-    -   [DMS自定义策略](DMS自定义策略.md)
+-   [权限管理](权限管理.md)
+    -   [创建用户并授权使用DMS for Kafka](创建用户并授权使用DMS-for-Kafka.md)
+    -   [DMS for Kafka自定义策略](DMS-for-Kafka自定义策略.md)
 
--   [环境准备](环境准备.md)
+-   [准备实例依赖资源](准备实例依赖资源.md)
 -   [购买实例](购买实例.md)
--   [连接Kafka]
-    -   [连接未开启SASL的Kafka专享实例](连接未开启SASL的Kafka专享实例.md)
+-   [连接Kafka](连接Kafka.md)
+    -   [连接未开启SASL的Kafka专享版实例](连接未开启SASL的Kafka专享版实例.md)
     -   [连接已开启SASL的Kafka专享版实例](连接已开启SASL的Kafka专享版实例.md)
     -   [连接和查看Kafka Manager](连接和查看Kafka-Manager.md)
+    -   [跨VPC访问Kafka专享版实例](跨VPC访问Kafka专享版实例.md)
 
--   [实例日常操作]
+-   [实例管理](实例管理.md)
+    -   [变更实例规格](变更实例规格.md)
     -   [查看实例](查看实例.md)
     -   [重启实例](重启实例.md)
     -   [删除实例](删除实例.md)
     -   [修改实例信息](修改实例信息.md)
     -   [设置实例公网访问](设置实例公网访问.md)
-    -   [变更实例规格](变更实例规格.md)
-    -   [转包周期](转包周期.md)
-    -   [Kafka实例创建Topic](Kafka实例创建Topic.md)
-    -   [Kafka实例删除Topic](Kafka实例删除Topic.md)
-    -   [重置kafka密码](重置kafka密码.md)
-    -   [重置Manager密码](重置Manager密码.md)
-    -   [查询消息](查询消息.md)
-    -   [开启转储](开启转储.md)
-    -   [管理标签](管理标签.md)
+    -   [按需转包周期](按需转包周期.md)
+    -   [重置SASL\_SSL密码](重置SASL_SSL密码.md)
+    -   [重置Kafka Manager密码](重置Kafka-Manager密码.md)
+    -   [重启Kafka Manager](重启Kafka-Manager.md)
+    -   [开启实例转储](开启实例转储.md)
+    -   [管理实例标签](管理实例标签.md)
     -   [查看实例后台任务](查看实例后台任务.md)
+    -   [查看磁盘使用量](查看磁盘使用量.md)
+    -   [创建SASL\_SSL用户](创建SASL_SSL用户.md)
 
--   [监控]
+-   [Topic管理](Topic管理.md)
+    -   [创建Topic](创建Topic.md)
+    -   [删除Topic](删除Topic.md)
+    -   [修改Topic老化时间](修改Topic老化时间.md)
+    -   [修改Topic分区数](修改Topic分区数.md)
+    -   [授权SASL\_SSL用户](授权SASL_SSL用户.md)
+
+-   [消息管理](消息管理.md)
+    -   [查询消息](查询消息.md)
+
+-   [修改配置参数](修改配置参数.md)
+-   [调整资源配额](调整资源配额.md)
+-   [监控](监控.md)
     -   [支持的监控指标](支持的监控指标.md)
-    -   [配置告警](配置告警.md)
+    -   [必须配置的监控告警](必须配置的监控告警.md)
     -   [查看监控数据](查看监控数据.md)
 
--   [审计]
+-   [审计](审计.md)
     -   [支持云审计的操作列表](支持云审计的操作列表.md)
     -   [查看云审计日志](查看云审计日志.md)
-
 
