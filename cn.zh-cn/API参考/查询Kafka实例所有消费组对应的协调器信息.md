@@ -1,4 +1,7 @@
-# 查询Kafka实例所有消费组对应的协调器信息<a name="ZH-CN_TOPIC_0210486910"></a>
+# 查询Kafka实例所有消费组对应的协调器信息<a name="kafka-api-191209010"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前页面API为历史版本API，未来可能停止维护。请使用[查询Kafka实例的协调器信息](查询Kafka实例的协调器信息.md)。
 
 ## URI<a name="section450410584581"></a>
 

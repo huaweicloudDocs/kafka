@@ -1,4 +1,7 @@
-# 调整Kafka实例Topic分区的副本<a name="ZH-CN_TOPIC_0210486913"></a>
+# 调整Kafka实例Topic分区的副本<a name="kafka-api-191209013"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前页面API为历史版本API，未来可能停止维护。请使用[修改Kafka实例Topic分区的副本](修改Kafka实例Topic分区的副本.md)。
 
 ## URI<a name="section9770155211595"></a>
 

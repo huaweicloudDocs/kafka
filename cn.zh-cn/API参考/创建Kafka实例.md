@@ -1,4 +1,7 @@
-# 创建Kafka实例<a name="ZH-CN_TOPIC_0171829499"></a>
+# 创建Kafka实例<a name="kafka-api-180514002"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前页面API为历史版本API，未来可能停止维护。请使用[创建实例（按需）](创建实例（按需）.md)。
 
 ## 功能介绍<a name="zh-cn_topic_0128036927_section19327142112288"></a>
 
@@ -61,7 +64,7 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p183161727253"><a name="zh-cn_topic_0128036927_p183161727253"></a><a name="zh-cn_topic_0128036927_p183161727253"></a>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p14316162182511"><a name="zh-cn_topic_0128036927_p14316162182511"></a><a name="zh-cn_topic_0128036927_p14316162182511"></a>实例名称。</p>
-<p id="zh-cn_topic_0128036927_p53166212252"><a name="zh-cn_topic_0128036927_p53166212252"></a><a name="zh-cn_topic_0128036927_p53166212252"></a>由英文字符开头，只能由英文字母、数字、中划线组成，长度为4~64的字符。</p>
+<p id="zh-cn_topic_0128036927_p53166212252"><a name="zh-cn_topic_0128036927_p53166212252"></a><a name="zh-cn_topic_0128036927_p53166212252"></a>由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row831615212510"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p1031652112514"><a name="zh-cn_topic_0128036927_p1031652112514"></a><a name="zh-cn_topic_0128036927_p1031652112514"></a>description</p>
@@ -132,7 +135,7 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p17180111185015"><a name="zh-cn_topic_0128036927_p17180111185015"></a><a name="zh-cn_topic_0128036927_p17180111185015"></a>否</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p350512371501"><a name="zh-cn_topic_0128036927_p350512371501"></a><a name="zh-cn_topic_0128036927_p350512371501"></a>当ssl_enable为true时，该参数必选， ssl_enable为false时，该参数无效。</p>
-<p id="zh-cn_topic_0128036927_p9187911185010"><a name="zh-cn_topic_0128036927_p9187911185010"></a><a name="zh-cn_topic_0128036927_p9187911185010"></a>认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。</p>
+<p id="zh-cn_topic_0128036927_p9187911185010"><a name="zh-cn_topic_0128036927_p9187911185010"></a><a name="zh-cn_topic_0128036927_p9187911185010"></a>认证用户名，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row1331918232516"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p1531913213255"><a name="zh-cn_topic_0128036927_p1531913213255"></a><a name="zh-cn_topic_0128036927_p1531913213255"></a>password</p>
@@ -144,7 +147,7 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p92285164212"><a name="zh-cn_topic_0128036927_p92285164212"></a><a name="zh-cn_topic_0128036927_p92285164212"></a>当ssl_enable为true时，该参数必选， ssl_enable为false时，该参数无效。</p>
 <p id="zh-cn_topic_0128036927_p18319423255"><a name="zh-cn_topic_0128036927_p18319423255"></a><a name="zh-cn_topic_0128036927_p18319423255"></a>实例的认证密码。</p>
 <p id="zh-cn_topic_0128036927_p1431914282516"><a name="zh-cn_topic_0128036927_p1431914282516"></a><a name="zh-cn_topic_0128036927_p1431914282516"></a>复杂度要求：</p>
-<a name="zh-cn_topic_0128036927_ul19319821253"></a><a name="zh-cn_topic_0128036927_ul19319821253"></a><ul id="zh-cn_topic_0128036927_ul19319821253"><li>输入长度为8到32位的字符串。</li><li>必须包含如下四种字符中的两种组合：<a name="zh-cn_topic_0128036927_ul1645101813412"></a><a name="zh-cn_topic_0128036927_ul1645101813412"></a><ul id="zh-cn_topic_0128036927_ul1645101813412"><li>小写字母</li><li>大写字母</li><li>数字</li><li>特殊字符包括（`~!@#$%^&amp;*()-_=+\|[{}]:'",&lt;.&gt;/?）</li></ul>
+<a name="zh-cn_topic_0128036927_ul19319821253"></a><a name="zh-cn_topic_0128036927_ul19319821253"></a><ul id="zh-cn_topic_0128036927_ul19319821253"><li>输入长度为8到32位的字符串。</li><li>必须包含如下四种字符中的三种组合：<a name="zh-cn_topic_0128036927_ul1645101813412"></a><a name="zh-cn_topic_0128036927_ul1645101813412"></a><ul id="zh-cn_topic_0128036927_ul1645101813412"><li>小写字母</li><li>大写字母</li><li>数字</li><li>特殊字符包括（`~!@#$%^&amp;*()-_=+\|[{}]:'",&lt;.&gt;/?）</li></ul>
 </li></ul>
 </td>
 </tr>
@@ -187,7 +190,8 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p183191216254"><a name="zh-cn_topic_0128036927_p183191216254"></a><a name="zh-cn_topic_0128036927_p183191216254"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p631942102511"><a name="zh-cn_topic_0128036927_p631942102511"></a><a name="zh-cn_topic_0128036927_p631942102511"></a>创建节点到指定的AZ ID，该参数不能为空数组或者数组的值为空，详情请参考<a href="查询可用区信息.md">查询可用区信息</a>查询得到。</p>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p631942102511"><a name="zh-cn_topic_0128036927_p631942102511"></a><a name="zh-cn_topic_0128036927_p631942102511"></a>创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空，详情请参考<a href="V1接口查询可用区信息.md">查询可用区信息</a>查询得到。在查询时，请注意查看该可用区是否有资源。</p>
+<p id="p112500322177"><a name="p112500322177"></a><a name="p112500322177"></a>创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row63199272514"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p11320172102520"><a name="zh-cn_topic_0128036927_p11320172102520"></a><a name="zh-cn_topic_0128036927_p11320172102520"></a>product_id</p>
@@ -197,7 +201,7 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p15320524252"><a name="zh-cn_topic_0128036927_p15320524252"></a><a name="zh-cn_topic_0128036927_p15320524252"></a>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p3320112182519"><a name="zh-cn_topic_0128036927_p3320112182519"></a><a name="zh-cn_topic_0128036927_p3320112182519"></a>产品标识。</p>
-<p id="zh-cn_topic_0128036927_p1212317503242"><a name="zh-cn_topic_0128036927_p1212317503242"></a><a name="zh-cn_topic_0128036927_p1212317503242"></a>获取方法，请参考<a href="查询产品规格列表.md">查询产品规格列表</a>。</p>
+<p id="zh-cn_topic_0128036927_p1212317503242"><a name="zh-cn_topic_0128036927_p1212317503242"></a><a name="zh-cn_topic_0128036927_p1212317503242"></a>获取方法，请参考<a href="V1接口查询产品规格列表.md">查询产品规格列表</a>。</p>
 </td>
 </tr>
 <tr id="row172716383566"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="p16281164514010"><a name="p16281164514010"></a><a name="p16281164514010"></a>kafka_manager_user</p>
@@ -206,7 +210,7 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="p17281154584018"><a name="p17281154584018"></a><a name="p17281154584018"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p8824816490"><a name="p8824816490"></a><a name="p8824816490"></a>表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。</p>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p8824816490"><a name="p8824816490"></a><a name="p8824816490"></a>表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。</p>
 </td>
 </tr>
 <tr id="row5277382564"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="p165341641154016"><a name="p165341641154016"></a><a name="p165341641154016"></a>kafka_manager_password</p>
@@ -217,7 +221,7 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p6534134124016"><a name="p6534134124016"></a><a name="p6534134124016"></a>表示登录Kafka Manager的密码。</p>
 <p id="p13738155925013"><a name="p13738155925013"></a><a name="p13738155925013"></a>复杂度要求：</p>
-<a name="ul177381659175012"></a><a name="ul177381659175012"></a><ul id="ul177381659175012"><li>输入长度为8到32位的字符串。</li><li>必须包含如下四种字符中的两种组合：<a name="ul11738459155010"></a><a name="ul11738459155010"></a><ul id="ul11738459155010"><li>小写字母</li><li>大写字母</li><li>数字</li><li>特殊字符包括（`~!@#$%^&amp;*()-_=+\|[{}]:'",&lt;.&gt;/?）</li></ul>
+<a name="ul177381659175012"></a><a name="ul177381659175012"></a><ul id="ul177381659175012"><li>输入长度为8到32位的字符串。</li><li>必须包含如下四种字符中的三种组合：<a name="ul11738459155010"></a><a name="ul11738459155010"></a><ul id="ul11738459155010"><li>小写字母</li><li>大写字母</li><li>数字</li><li>特殊字符包括（`~!@#$%^&amp;*()-_=+\|[{}]:'",&lt;.&gt;/?）</li></ul>
 </li></ul>
 </td>
 </tr>
@@ -227,8 +231,8 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p18320126252"><a name="zh-cn_topic_0128036927_p18320126252"></a><a name="zh-cn_topic_0128036927_p18320126252"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p332017212255"><a name="zh-cn_topic_0128036927_p332017212255"></a><a name="zh-cn_topic_0128036927_p332017212255"></a>维护时间窗开始时间，格式为HH:mm。</p>
-<a name="zh-cn_topic_0128036927_ul1232022112510"></a><a name="zh-cn_topic_0128036927_ul1232022112510"></a><ul id="zh-cn_topic_0128036927_ul1232022112510"><li>维护时间窗开始和结束时间必须为指定的时间段，可参考<a href="查询维护时间窗时间段.md">查询维护时间窗时间段</a>获取。</li><li>开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。</li><li>该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。</li></ul>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p332017212255"><a name="zh-cn_topic_0128036927_p332017212255"></a><a name="zh-cn_topic_0128036927_p332017212255"></a>维护时间窗开始时间，格式为HH:mm:ss。</p>
+<a name="zh-cn_topic_0128036927_ul1232022112510"></a><a name="zh-cn_topic_0128036927_ul1232022112510"></a><ul id="zh-cn_topic_0128036927_ul1232022112510"><li>维护时间窗开始和结束时间必须为指定的时间段，可参考<a href="V1接口查询维护时间窗时间段.md">查询维护时间窗时间段</a>获取。</li><li>开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。</li><li>该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row63208292516"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p153201826257"><a name="zh-cn_topic_0128036927_p153201826257"></a><a name="zh-cn_topic_0128036927_p153201826257"></a>maintain_end</p>
@@ -237,8 +241,8 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p9320722251"><a name="zh-cn_topic_0128036927_p9320722251"></a><a name="zh-cn_topic_0128036927_p9320722251"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p2320424257"><a name="zh-cn_topic_0128036927_p2320424257"></a><a name="zh-cn_topic_0128036927_p2320424257"></a>维护时间窗结束时间，格式为HH:mm。</p>
-<a name="zh-cn_topic_0128036927_ul1432013292512"></a><a name="zh-cn_topic_0128036927_ul1432013292512"></a><ul id="zh-cn_topic_0128036927_ul1432013292512"><li>维护时间窗开始和结束时间必须为指定的时间段，可参考<a href="查询维护时间窗时间段.md">查询维护时间窗时间段</a>获取。</li><li>结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。</li><li>该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。</li></ul>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p2320424257"><a name="zh-cn_topic_0128036927_p2320424257"></a><a name="zh-cn_topic_0128036927_p2320424257"></a>维护时间窗结束时间，格式为HH:mm:ss。</p>
+<a name="zh-cn_topic_0128036927_ul1432013292512"></a><a name="zh-cn_topic_0128036927_ul1432013292512"></a><ul id="zh-cn_topic_0128036927_ul1432013292512"><li>维护时间窗开始和结束时间必须为指定的时间段，可参考<a href="V1接口查询维护时间窗时间段.md">查询维护时间窗时间段</a>获取。</li><li>结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。</li><li>该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00:00。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row974782874210"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p94625574217"><a name="zh-cn_topic_0128036927_p94625574217"></a><a name="zh-cn_topic_0128036927_p94625574217"></a>enable_publicip</p>
@@ -248,7 +252,18 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p15465558422"><a name="zh-cn_topic_0128036927_p15465558422"></a><a name="zh-cn_topic_0128036927_p15465558422"></a>否</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p184635511420"><a name="zh-cn_topic_0128036927_p184635511420"></a><a name="zh-cn_topic_0128036927_p184635511420"></a>实例是否开启公网访问功能。</p>
-<a name="zh-cn_topic_0128036927_ul2046195510424"></a><a name="zh-cn_topic_0128036927_ul2046195510424"></a><ul id="zh-cn_topic_0128036927_ul2046195510424"><li>true：开启</li><li>false：比开启</li></ul>
+<a name="zh-cn_topic_0128036927_ul2046195510424"></a><a name="zh-cn_topic_0128036927_ul2046195510424"></a><ul id="zh-cn_topic_0128036927_ul2046195510424"><li>true：开启</li><li>false：不开启</li></ul>
+</td>
+</tr>
+<tr id="row135402781911"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="p18041538929"><a name="p18041538929"></a><a name="p18041538929"></a>public_bandwidth</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.272727272727273%" headers="mcps1.2.5.1.2 "><p id="p1804938427"><a name="p1804938427"></a><a name="p1804938427"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="p9804638323"><a name="p9804638323"></a><a name="p9804638323"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p0804738628"><a name="p0804738628"></a><a name="p0804738628"></a>表示公网带宽，单位是Mbit/s。</p>
+<p id="p119215503542"><a name="p119215503542"></a><a name="p119215503542"></a>取值范围：</p>
+<a name="ul242634414559"></a><a name="ul242634414559"></a><ul id="ul242634414559"><li>Kafka实例规格为100MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。</li><li>Kafka实例规格为300MB时，公网带宽取值范围3到900，且必须为实例节点个数的倍数。</li><li>Kafka实例规格为600MB时，公网带宽取值范围4到1200，且必须为实例节点个数的倍数。</li><li>Kafka实例规格为1200MB时，公网带宽取值范围8到2400，且必须为实例节点个数的倍数。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0128036927_row8185632194217"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0128036927_p154835519428"><a name="zh-cn_topic_0128036927_p154835519428"></a><a name="zh-cn_topic_0128036927_p154835519428"></a>publicip_id</p>
@@ -258,6 +273,7 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0128036927_p1548105517423"><a name="zh-cn_topic_0128036927_p1548105517423"></a><a name="zh-cn_topic_0128036927_p1548105517423"></a>否</p>
 </td>
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p648355194215"><a name="zh-cn_topic_0128036927_p648355194215"></a><a name="zh-cn_topic_0128036927_p648355194215"></a>实例绑定的弹性IP地址的ID。</p>
+<p id="p13733924125013"><a name="p13733924125013"></a><a name="p13733924125013"></a>以英文逗号隔开多个弹性IP地址的ID。</p>
 <p id="zh-cn_topic_0128036927_p1148175516425"><a name="zh-cn_topic_0128036927_p1148175516425"></a><a name="zh-cn_topic_0128036927_p1148175516425"></a>如果开启了公网访问功能（即enable_publicip为true），该字段为必选。</p>
 </td>
 </tr>
@@ -277,7 +293,8 @@ POST /v1.0/\{project\_id\}/instances
 </td>
 <td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="p468915555417"><a name="p468915555417"></a><a name="p468915555417"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p10687115513410"><a name="p10687115513410"></a><a name="p10687115513410"></a>磁盘的容量到达容量阈值后，对于消息的处理策略。</p>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p10687115513410"><a name="p10687115513410"></a><a name="p10687115513410"></a>磁盘的容量到达容量阈值后，对于消息的处理策略。取值如下：</p>
+<a name="ul4251160181310"></a><a name="ul4251160181310"></a><ul id="ul4251160181310"><li>time_base：自动删除</li><li>produce_reject：生产受限</li></ul>
 </td>
 </tr>
 <tr id="row3529197125611"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="p3686105594114"><a name="p3686105594114"></a><a name="p3686105594114"></a>connector_enable</p>
@@ -320,37 +337,76 @@ POST /v1.0/\{project\_id\}/instances
 <td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0128036927_p8484174824920"><a name="zh-cn_topic_0128036927_p8484174824920"></a><a name="zh-cn_topic_0128036927_p8484174824920"></a>企业项目ID。</p>
 </td>
 </tr>
+<tr id="row1878124911113"><td class="cellrowborder" valign="top" width="17.171717171717173%" headers="mcps1.2.5.1.1 "><p id="p188131615507"><a name="p188131615507"></a><a name="p188131615507"></a>tags</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.272727272727273%" headers="mcps1.2.5.1.2 "><p id="p88131268506"><a name="p88131268506"></a><a name="p88131268506"></a>Array&lt;Object&gt;</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.969696969696969%" headers="mcps1.2.5.1.3 "><p id="p158131267507"><a name="p158131267507"></a><a name="p158131267507"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.58585858585859%" headers="mcps1.2.5.1.4 "><p id="p178131768500"><a name="p178131768500"></a><a name="p178131768500"></a>标签列表。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 3**  tags
+
+<a name="request_tags"></a>
+<table><thead align="left"><tr id="row73331247502"><th class="cellrowborder" valign="top" width="17.38826117388261%" id="mcps1.2.5.1.1"><p id="p38141469506"><a name="p38141469506"></a><a name="p38141469506"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="11.878812118788122%" id="mcps1.2.5.1.2"><p id="p681419655016"><a name="p681419655016"></a><a name="p681419655016"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="12.028797120287972%" id="mcps1.2.5.1.3"><p id="p6391929637"><a name="p6391929637"></a><a name="p6391929637"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="58.70412958704129%" id="mcps1.2.5.1.4"><p id="p1381410635017"><a name="p1381410635017"></a><a name="p1381410635017"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1633311413501"><td class="cellrowborder" valign="top" width="17.38826117388261%" headers="mcps1.2.5.1.1 "><p id="p1081417695019"><a name="p1081417695019"></a><a name="p1081417695019"></a>key</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.878812118788122%" headers="mcps1.2.5.1.2 "><p id="p18814126115019"><a name="p18814126115019"></a><a name="p18814126115019"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.028797120287972%" headers="mcps1.2.5.1.3 "><p id="p13932915311"><a name="p13932915311"></a><a name="p13932915311"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.70412958704129%" headers="mcps1.2.5.1.4 "><p id="p168141360503"><a name="p168141360503"></a><a name="p168141360503"></a>键。最大长度36个unicode字符。</p>
+<p id="p3814063502"><a name="p3814063502"></a><a name="p3814063502"></a>key不能为空，不能为空字符串。</p>
+<p id="p88156614509"><a name="p88156614509"></a><a name="p88156614509"></a>不能包含下列字符：非打印字符ASCII(0-31)，“=”,“*”,“&lt;”,“&gt;”,“\”,“,”,“|”,“/”。</p>
+</td>
+</tr>
+<tr id="row163330435013"><td class="cellrowborder" valign="top" width="17.38826117388261%" headers="mcps1.2.5.1.1 "><p id="p158159675017"><a name="p158159675017"></a><a name="p158159675017"></a>value</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.878812118788122%" headers="mcps1.2.5.1.2 "><p id="p4815146145012"><a name="p4815146145012"></a><a name="p4815146145012"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.028797120287972%" headers="mcps1.2.5.1.3 "><p id="p539529235"><a name="p539529235"></a><a name="p539529235"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.70412958704129%" headers="mcps1.2.5.1.4 "><p id="p15815069508"><a name="p15815069508"></a><a name="p15815069508"></a>值。每个值最大长度43个unicode字符。</p>
+<p id="p10815860508"><a name="p10815860508"></a><a name="p10815860508"></a>value不能为空，可以空字符串。</p>
+<p id="p168152613508"><a name="p168152613508"></a><a name="p168152613508"></a>不能包含下列字符：非打印字符ASCII(0-31), “=”,“*”,“&lt;”,“&gt;”,“\”,“,”,“|”,“/”。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 ```
 {
-	"name": "kafka-test",
-	"description": "",
-	"engine": "kafka",
-	"engine_version": "1.1.0",
-	"storage_space": 600,
-	"access_user": "",
-	"password": "",
-	"kafka_manager_user": "******",
-	"kafka_manager_password": "******",
-	"vpc_id": "1e93f86e-13af-46c8-97d6-d40fa62b76c2",
-	"security_group_id": "0aaa0033-bf7f-4c41-a6c2-18cd04cad2c8",
-	"subnet_id": "b5fa806c-35e7-4299-b659-b39398dd4718",
-	"available_zones": ["d573142f24894ef3bd3664de068b44b0"],
-	"product_id": "00300-30308-0--0",
-	"maintain_begin": "22:00",
-	"maintain_end": "02:00",
-	"ssl_enable": false,
-	"enable_publicip": false,
-	"publicip_id": "",
-	"enterprise_project_id": "0",
-	"specification": "100MB",
-	"partition_num": "300",
-	"retention_policy": "produce_reject",
-	"connector_enable": false,
-        "enable_auto_topic": true,
-	"storage_spec_code": "dms.physical.storage.ultra"
+ "name": "kafka-test",
+ "engine": "kafka",
+ "engine_version": "2.3.0",
+ "specification": "100MB",
+ "storage_space": 600,
+ "partition_num": 300,
+ "vpc_id": "b50c1aa7-39e0-420e-936b-ee5d35288f9c",
+ "security_group_id": "d8c81e0f-de6a-4110-8c96-81af3eacb3d1",
+ "subnet_id": "0b6cfaea-bce7-48eb-b38d-267c24df5f79",
+ "available_zones": [
+  "38b0f7a602344246bcb0da47b5d548e7"
+ ],
+ "product_id": "00300-30308-0--0",
+ "kafka_manager_user": "test",
+ "kafka_manager_password": "Zxxxx",
+ "enable_publicip": true,
+ "publicip_id": "87864b85-7097-4c06-9d62-718d7359a503,72c12ba7-fade-4b06-a680-01d335cf786d,11b535df-ed6d-4521-8d00-12bb60beb617",
+ "storage_spec_code": "dms.physical.storage.high"
 }
 ```
 
@@ -358,9 +414,9 @@ POST /v1.0/\{project\_id\}/instances
 
 **响应参数**
 
-参数说明见[表3](#zh-cn_topic_0128036927_table91311217255)。
+参数说明见[表4](#zh-cn_topic_0128036927_table91311217255)。
 
-**表 3**  参数说明
+**表 4**  参数说明
 
 <a name="zh-cn_topic_0128036927_table91311217255"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0128036927_row1322192152515"><th class="cellrowborder" valign="top" width="20.200000000000003%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0128036927_p173221426253"><a name="zh-cn_topic_0128036927_p173221426253"></a><a name="zh-cn_topic_0128036927_p173221426253"></a>参数</p>
@@ -391,9 +447,9 @@ POST /v1.0/\{project\_id\}/instances
 
 ## 状态码<a name="zh-cn_topic_0128036927_section1713714282512"></a>
 
-操作成功的状态码如[表4](#zh-cn_topic_0128036927_table1813714214251)所示，其他响应见[状态码](状态码.md)。
+操作成功的状态码如[表5](#zh-cn_topic_0128036927_table1813714214251)所示，其他响应见[状态码](状态码.md)。
 
-**表 4**  状态码
+**表 5**  状态码
 
 <a name="zh-cn_topic_0128036927_table1813714214251"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0128036927_row63247232520"><th class="cellrowborder" valign="top" width="15.15%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0128036927_p193241124250"><a name="zh-cn_topic_0128036927_p193241124250"></a><a name="zh-cn_topic_0128036927_p193241124250"></a>状态码</p>
